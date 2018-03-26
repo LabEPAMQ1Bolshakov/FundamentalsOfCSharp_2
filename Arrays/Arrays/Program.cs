@@ -55,16 +55,10 @@ namespace Arrays
             Console.WriteLine();
 
             int[,] arr3 = new int[rowsArr, columnArr];
-            for (int i = 0; i <= rowsArr - 1; i++)
-            {
-                for (int j = 0; j <= columnArr - 1; j++)
-                {
-                    arr3[i, j] = arr1[i, j] + arr2[i, j];
-                }
-            }
-
+            AddArray(rowsArr, columnArr, arr1, arr2, arr3);
             WriteArray(arr3, rowsArr, columnArr);
             
+
             Console.ReadKey();
         }
 
@@ -89,6 +83,18 @@ namespace Arrays
                 }
             }
         }
+
+        static void AddArray(int rowsArr, int columnArr, int[,] arr1, int[,] arr2, int[,] arr3)
+        {
+            for (int i = 0; i <= rowsArr - 1; i++)
+            {
+                for (int j = 0; j <= columnArr - 1; j++)
+                {
+                    arr3[i, j] = arr1[i, j] + arr2[i, j];
+                }
+            }           
+        }
+
 
         static void WriteArray(int[,] arr, int rowsArr, int columnArr)
         {
